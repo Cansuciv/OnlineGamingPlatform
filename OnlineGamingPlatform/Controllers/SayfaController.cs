@@ -42,5 +42,17 @@ namespace OnlineGamingPlatform.Controllers
             return View("~/Views/Sayfa/PersonelSayfasi/AddGame.cshtml");
         }
 
+        [Route("Sayfa/PersonelSayfasi/OrganizeGame")]
+        public IActionResult OrganizeGame()
+        {
+            return View("~/Views/Sayfa/PersonelSayfasi/OrganizeGame.cshtml");
+        }
+
+        [Route("Sayfa/PersonelSayfasi/DeleteGame")]
+        public IActionResult DeleteGame()
+        {
+            return View("~/Views/Sayfa/PersonelSayfasi/DeleteGame.cshtml");
+        }
+
     }
 }

@@ -4661,3 +4661,30 @@ body.IE .login-wrap, body.IE .register-page-wrap {
 /*.sidebar-dark .sidebar-menu li:hover .dynamic-icon {
     filter: invert(0) brightness(1);*/ /* Siyah ikon */
 /*}*/
+
+.delete-image-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .delete-image-btn:hover {
+        background: darkred;
+        transform: scale(1.1);
+    }
+
+.img-container {
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}

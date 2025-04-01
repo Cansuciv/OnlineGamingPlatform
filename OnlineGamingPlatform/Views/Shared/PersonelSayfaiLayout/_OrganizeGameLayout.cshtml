@@ -22,9 +22,8 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/src/plugins/datatables/css/responsive.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/vendors/styles/style.css">
+
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -39,8 +38,9 @@
 <body>
 
 	<div>
-		@RenderBody() 
+		@RenderBody()
 	</div>
+
 
 	<div class="pre-loader">
 		<div class="pre-loader-box">
@@ -56,7 +56,7 @@
 	</div>
 
 	<div class="header">
-		
+
 		<div class="header-right">
 			<div class="dashboard-setting user-notification">
 				<div class="dropdown">
@@ -121,6 +121,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="user-info-dropdown">
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -137,7 +138,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 
@@ -164,10 +165,6 @@
 					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-light ">White</a>
 					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Dark</a>
 				</div>
-
-				
-
-				
 
 				<div class="reset-options pt-30 text-center">
 					<button class="btn btn-danger" id="reset-settings">Reset Settings</button>
@@ -238,8 +235,8 @@
 						</a>
 					</li>
 
-				
-					
+
+
 					<li>
 						<a href="~/PersonelSayfasi/chat.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-chat3"></span><span class="mtext">Chat</span>
@@ -250,8 +247,8 @@
 							<span class="micon dw dw-invoice"></span><span class="mtext">Invoice</span>
 						</a>
 					</li>
-					
-			
+
+
 				</ul>
 			</div>
 		</div>
@@ -259,23 +256,171 @@
 	<div class="mobile-menu-overlay"></div>
 
 	<div class="main-container">
-		<div class="pd-ltr-20">
-			<div class="card-box pd-20 height-100-p mb-30">
-				<div class="row align-items-center">
-					<div class="col-md-4">
-						<img src="~/PersonelSayfasi/vendors/images/banner-img.png" alt="">
-					</div>
-					<div class="col-md-8">
-						<h4 class="font-20 weight-500 mb-10 text-capitalize">
-							Welcome back <div class="weight-600 font-30 text-blue">Johnny Brown!</div>
-						</h4>
-						<p class="font-18 max-width-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde hic non repellendus debitis iure, doloremque assumenda. Autem modi, corrupti, nobis ea iure fugiat, veniam non quaerat mollitia animi error corporis.</p>
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<div class="title">
+								<h4>Form</h4>
+							</div>
+							<nav aria-label="breadcrumb" role="navigation">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="/Sayfa/PersonelSayfasi">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Oyun Düzenle</li>
+								</ol>
+							</nav>
+						</div>
+
 					</div>
 				</div>
+
+				<!-- Default Basic Forms Start -->
+				<div class="pd-20 card-box mb-30">
+					<div class="clearfix">
+						<div class="pull-left">
+							<h4 class="text-blue h4">Oyun Düzenle</h4>
+							<p class="mb-30">Oyun bilgilerini aşağıdan düzenleyebilirsiniz</p>
+						</div>
+					</div>
+
+					<!-- Oyun Düzenleme Formu -->
+					<form id="editGameForm">
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Oyun Kodu</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" name="gameCode" id="editGameCode" value="KDS152" required>
+								<small class="form-text text-muted">Oyunun benzersiz tanımlayıcı kodu</small>
+							</div>
+						</div>
+
+						<!-- Resim Yönetimi - Ana Resim -->
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Ana Resim</label>
+							<div class="col-sm-12 col-md-10">
+								<div id="mainImageContainer" style="display:none; position: relative; margin-bottom: 15px;">
+									<img id="mainImagePreview" src="#" class="img-thumbnail"
+										 style="width: 300px; height: 400px; object-fit: cover;">
+									<span class="delete-image-btn" onclick="removeMainImage()"
+										  style="position: absolute; top: 5px; right: 630px; background: red; color: white; border-radius: 50%; width: 20px; height: 20px; text-align: center; line-height: 20px; cursor: pointer;">×</span>
+								</div>
+								<input type="file" class="form-control-file" id="mainImageUpload" accept="image/*">
+								<small class="form-text text-muted">Yeni ana resim seçin (1:1.85 oran önerilir)</small>
+							</div>
+						</div>
+
+						<!-- Resim Yönetimi - İçerik Resimleri -->
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">İçerik Resimleri</label>
+							<div class="col-sm-12 col-md-10">
+								<div id="contentImagesContainer" style="display:none; margin-bottom: 15px;">
+									<div id="contentImagesPreview" class="d-flex flex-wrap"></div>
+								</div>
+								<input type="file" class="form-control-file" id="contentImagesUpload" multiple accept="image/*">
+								<small class="form-text text-muted">Yeni içerik resimleri seçin (Maksimum 4 adet)</small>
+							</div>
+						</div>
+
+						<!-- Oyun Bilgileri -->
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Oyun Adı</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" name="gameName" id="editGameName" value="Örnek Oyun Adı" required>
+							</div>
+						</div>
+
+						<!-- Türler (Checkbox listesi + Yeni Tür Ekleme) -->
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Türler</label>
+							<div class="col-sm-12 col-md-10">
+								<!-- Varsayılan Türler -->
+								<div id="default-genres">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeAction" value="Aksiyon">
+										<label class="form-check-label" for="typeAction">Aksiyon</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeAdventure" value="Macera">
+										<label class="form-check-label" for="typeAdventure">Macera</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeRPG" value="Rol yapma">
+										<label class="form-check-label" for="typeRPG">Rol yapma</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeSimulation" value="Simülasyon">
+										<label class="form-check-label" for="typeSimulation">Simülasyon</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeStrategy" value="Strateji">
+										<label class="form-check-label" for="typeStrategy">Strateji</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeHorror" value="Korku">
+										<label class="form-check-label" for="typeHorror">Korku</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeRacing" value="Yarış">
+										<label class="form-check-label" for="typeRacing">Yarış</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeSports" value="Spor">
+										<label class="form-check-label" for="typeSports">Spor</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeFighting" value="Dövüş">
+										<label class="form-check-label" for="typeFighting">Dövüş</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typePuzzle" value="Bulmaca">
+										<label class="form-check-label" for="typePuzzle">Bulmaca</label>
+									</div>
+								</div>
+
+								<!-- Özel Tür Ekleme -->
+								<div class="custom-genre mt-3">
+									<div class="input-group mb-2">
+										<input type="text" class="form-control" id="newGenre" placeholder="Yeni tür adı giriniz">
+										<div class="input-group-append">
+											<button class="btn btn-outline-primary" type="button" id="addGenreBtn">Tür Ekle</button>
+										</div>
+									</div>
+									<small class="form-text text-muted">Listede olmayan bir tür eklemek için yazıp 'Tür Ekle' butonuna basın</small>
+								</div>
+
+								<!-- Eklenen Özel Türler -->
+								<div id="customGenresContainer" class="mt-2"></div>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Fiyat (₺)</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="number" name="price" id="editPrice" value="99.99" step="0.01" min="0" required>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Açıklama</label>
+							<div class="col-sm-12 col-md-10">
+								<textarea class="form-control" name="description" id="editDescription" rows="5" required>Bu örnek bir oyun açıklamasıdır. Oyunun detaylarını burada açıklayabilirsiniz.</textarea>
+							</div>
+						</div>
+
+						<!-- Kaydet Butonu -->
+						<div class="form-group row">
+							<div class="col-sm-12 col-md-10 offset-md-2">
+								<button type="submit" class="btn btn-primary">
+									<i class="dw dw-save"></i> Değişiklikleri Kaydet
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+
+
 			</div>
-			
-			
-			
+
 			<div class="footer-wrap pd-20 mb-20 card-box">
 				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
 			</div>
@@ -286,11 +431,6 @@
 	<script src="~/PersonelSayfasi/vendors/scripts/script.min.js"></script>
 	<script src="~/PersonelSayfasi/vendors/scripts/process.js"></script>
 	<script src="~/PersonelSayfasi/vendors/scripts/layout-settings.js"></script>
-	<script src="~/PersonelSayfasi/src/plugins/apexcharts/apexcharts.min.js"></script>
-	<script src="~/PersonelSayfasi/src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="~/PersonelSayfasi/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-	<script src="~/PersonelSayfasi/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-	<script src="~/PersonelSayfasi/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-	<script src="~/PersonelSayfasi/vendors/scripts/dashboard.js"></script>
+		<script src="~/PersonelSayfasi/vendors/scripts/OrganizeGame.js"></script>
 </body>
 </html>

@@ -218,7 +218,7 @@
 					</li>
 
 					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
+						<a asp-controller="Sayfa" asp-action="OrganizeGame" class="dropdown-toggle">
 							<img src="/PersonelSayfasi/src/images/oyun-ekle-duzenle-sil-icon/oyun-duzenle.png"
 								 alt="Oyun Düzenle"
 								 class="dynamic-icon">
@@ -227,7 +227,7 @@
 					</li>
 
 					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
+						<a asp-controller="Sayfa" asp-action="DeleteGame" class="dropdown-toggle">
 							<img src="/PersonelSayfasi/src/images/oyun-ekle-duzenle-sil-icon/oyun-sil.png"
 								 alt="Oyun Sil"
 								 class="dynamic-icon">
@@ -267,7 +267,7 @@
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="/Sayfa/PersonelSayfasi">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Form Basic</li>
+									<li class="breadcrumb-item active" aria-current="page">Oyun Ekle</li>
 								</ol>
 							</nav>
 						</div>
@@ -281,202 +281,145 @@
 							<h4 class="text-blue h4">Oyun Ekle</h4>
 							<p class="mb-30">Oyun Eklemek için aşağıdaki yerleri doldurunuz!</p>
 						</div>
-						
 					</div>
 					<form>
+						<!-- Ana Resim Yükleme (Tek dosya) -->
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Text</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Ana Resim</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Johnny Brown">
+								<input type="file" class="form-control-file" id="mainImage" accept="image/*" required>
+								<small class="form-text text-muted">Oyunun ana resmini yükleyin (Sadece 1 resim)</small>
 							</div>
 						</div>
+
+						<!-- İçerik Resim Yükleme (Maksimum 4 dosya) -->
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Search</label>
+							<label class="col-sm-12 col-md-2 col-form-label">İçerik Resimleri</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" placeholder="Search Here" type="search">
+								<input type="file" class="form-control-file" id="contentImages" accept="image/*" multiple max="4">
+								<small class="form-text text-muted">Oyun içeriği için resim yükleyin (Maksimum 4 resim)</small>
 							</div>
 						</div>
+
+						<!-- Oyun Kodu -->
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Email</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Oyun Kodu</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="bootstrap@example.com" type="email">
+								<input class="form-control" type="text" placeholder="Oyun kodunu giriniz" required>
 							</div>
 						</div>
+
+						<!-- Oyun Adı -->
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">URL</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Oyun Adı</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="https://getbootstrap.com" type="url">
+								<input class="form-control" type="text" placeholder="Oyun adını giriniz" required>
 							</div>
 						</div>
+
+						<!-- Türler (Checkbox listesi + Yeni Tür Ekleme) -->
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Telephone</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Türler</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="1-(111)-111-1111" type="tel">
+								<!-- Varsayılan Türler -->
+								<div id="default-genres">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeAction" value="Aksiyon">
+										<label class="form-check-label" for="typeAction">Aksiyon</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeAdventure" value="Macera">
+										<label class="form-check-label" for="typeAdventure">Macera</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeRPG" value="Rol yapma">
+										<label class="form-check-label" for="typeRPG">Rol yapma</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeSimulation" value="Simülasyon">
+										<label class="form-check-label" for="typeSimulation">Simülasyon</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeStrategy" value="Strateji">
+										<label class="form-check-label" for="typeStrategy">Strateji</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeHorror" value="Korku">
+										<label class="form-check-label" for="typeHorror">Korku</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeRacing" value="Yarış">
+										<label class="form-check-label" for="typeRacing">Yarış</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeSports" value="Spor">
+										<label class="form-check-label" for="typeSports">Spor</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typeFighting" value="Dövüş">
+										<label class="form-check-label" for="typeFighting">Dövüş</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="gameTypes" id="typePuzzle" value="Bulmaca">
+										<label class="form-check-label" for="typePuzzle">Bulmaca</label>
+									</div>
+								</div>
+
+								<!-- Özel Tür Ekleme -->
+								<div class="custom-genre mt-3">
+									<div class="input-group mb-2">
+										<input type="text" class="form-control" id="newGenre" placeholder="Yeni tür adı giriniz">
+										<div class="input-group-append">
+											<button class="btn btn-outline-primary" type="button" id="addGenreBtn">Tür Ekle</button>
+										</div>
+									</div>
+									<small class="form-text text-muted">Listede olmayan bir tür eklemek için yazıp 'Tür Ekle' butonuna basın</small>
+								</div>
+
+								<!-- Eklenen Özel Türler -->
+								<div id="customGenresContainer" class="mt-2"></div>
 							</div>
 						</div>
+
+						<!-- Fiyat -->
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Password</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Fiyat</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="password" type="password">
+								<div class="input-group">
+									<input class="form-control" type="number" placeholder="Fiyat giriniz" step="0.01" min="0" required>
+									<div class="input-group-append">
+										<span class="input-group-text">₺</span>
+									</div>
+								</div>
 							</div>
 						</div>
+
+						<!-- Açıklama -->
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Number</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Açıklama</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="100" type="number">
+								<textarea class="form-control" rows="5" placeholder="Oyun açıklamasını giriniz" required></textarea>
 							</div>
 						</div>
+
+						<!-- Yayınlanma Tarihi -->
 						<div class="form-group row">
-							<label for="example-datetime-local-input" class="col-sm-12 col-md-2 col-form-label">Date and time</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Yayınlanma Tarihi</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control datetimepicker" placeholder="Choose Date anf time" type="text">
+								<input class="form-control date-picker" placeholder="Tarih seçiniz" type="text" required>
 							</div>
 						</div>
+
+						<!-- Oyun Ekle Butonu -->
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Date</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control date-picker" placeholder="Select Date" type="text">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Month</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control month-picker" placeholder="Select Month" type="text">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Time</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control time-picker" placeholder="Select time" type="text">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Select</label>
-							<div class="col-sm-12 col-md-10">
-								<select class="custom-select col-12">
-									<option selected="">Choose...</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
-								</select>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Color</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="#563d7c" type="color">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Input Range</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="50" type="range">
+							<div class="col-sm-12 col-md-10 offset-md-2">
+								<button type="submit" class="btn btn-primary">Oyun Ekle</button>
 							</div>
 						</div>
 					</form>
-					<div class="collapse collapse-box" id="basic-form1">
-						<div class="code-box">
-							<div class="clearfix">
-								<a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left" data-clipboard-target="#copy-pre"><i class="fa fa-clipboard"></i> Copy Code</a>
-								<a href="#basic-form1" class="btn btn-primary btn-sm pull-right" rel="content-y" data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
-							</div>
-							<pre><code class="xml copy-pre" id="copy-pre">
-<form>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Text</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control" type="text" placeholder="Johnny Brown">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Search</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control" placeholder="Search Here" type="search">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Email</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control" value="bootstrap@example.com" type="email">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">URL</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control" value="https://getbootstrap.com" type="url">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Telephone</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control" value="1-(111)-111-1111" type="tel">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Password</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control" value="password" type="password">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Number</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control" value="100" type="number">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label for="example-datetime-local-input" class="col-sm-12 col-md-2 col-form-label">Date and time</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control datetimepicker" placeholder="Choose Date anf time" type="text">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Date</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control date-picker" placeholder="Select Date" type="text">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Month</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control month-picker" placeholder="Select Month" type="text">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Time</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control time-picker" placeholder="Select time" type="text">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Select</label>
-							<div class="col-sm-12 col-md-10">
-							<select class="custom-select col-12">
-							<option selected="">Choose...</option>
-							<option value="1">One</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
-			</select>
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Color</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control" value="#563d7c" type="color">
-		</div>
-	</div>
-							<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Input Range</label>
-							<div class="col-sm-12 col-md-10">
-							<input class="form-control" value="50" type="range">
-		</div>
-	</div>
-</form>
-							</code></pre>
-						</div>
-					</div>
 				</div>
-				<!-- Default Basic Forms End -->
+
+				
 				
 				
 				
@@ -492,5 +435,6 @@
 	<script src="~/PersonelSayfasi/vendors/scripts/script.min.js"></script>
 	<script src="~/PersonelSayfasi/vendors/scripts/process.js"></script>
 	<script src="~/PersonelSayfasi/vendors/scripts/layout-settings.js"></script>
+	<script src="~/PersonelSayfasi/vendors/scripts/AddGame.js"></script>
 </body>
 </html>

@@ -22,9 +22,8 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/src/plugins/datatables/css/responsive.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/vendors/styles/style.css">
+
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -39,8 +38,9 @@
 <body>
 
 	<div>
-		@RenderBody() 
+		@RenderBody()
 	</div>
+
 
 	<div class="pre-loader">
 		<div class="pre-loader-box">
@@ -56,7 +56,7 @@
 	</div>
 
 	<div class="header">
-		
+
 		<div class="header-right">
 			<div class="dashboard-setting user-notification">
 				<div class="dropdown">
@@ -121,6 +121,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="user-info-dropdown">
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -137,7 +138,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 
@@ -164,10 +165,6 @@
 					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-light ">White</a>
 					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Dark</a>
 				</div>
-
-				
-
-				
 
 				<div class="reset-options pt-30 text-center">
 					<button class="btn btn-danger" id="reset-settings">Reset Settings</button>
@@ -238,8 +235,8 @@
 						</a>
 					</li>
 
-				
-					
+
+
 					<li>
 						<a href="~/PersonelSayfasi/chat.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-chat3"></span><span class="mtext">Chat</span>
@@ -250,8 +247,8 @@
 							<span class="micon dw dw-invoice"></span><span class="mtext">Invoice</span>
 						</a>
 					</li>
-					
-			
+
+
 				</ul>
 			</div>
 		</div>
@@ -259,38 +256,139 @@
 	<div class="mobile-menu-overlay"></div>
 
 	<div class="main-container">
-		<div class="pd-ltr-20">
-			<div class="card-box pd-20 height-100-p mb-30">
-				<div class="row align-items-center">
-					<div class="col-md-4">
-						<img src="~/PersonelSayfasi/vendors/images/banner-img.png" alt="">
-					</div>
-					<div class="col-md-8">
-						<h4 class="font-20 weight-500 mb-10 text-capitalize">
-							Welcome back <div class="weight-600 font-30 text-blue">Johnny Brown!</div>
-						</h4>
-						<p class="font-18 max-width-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde hic non repellendus debitis iure, doloremque assumenda. Autem modi, corrupti, nobis ea iure fugiat, veniam non quaerat mollitia animi error corporis.</p>
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<div class="title">
+								<h4>Form</h4>
+							</div>
+							<nav aria-label="breadcrumb" role="navigation">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="/Sayfa/PersonelSayfasi">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Oyun Sil</li>
+								</ol>
+							</nav>
+						</div>
+
 					</div>
 				</div>
+
+				<!-- Oyun Silme Formu -->
+				<div class="pd-20 card-box mb-30">
+					<div class="clearfix">
+						<div class="pull-left">
+							<h4 class="text-blue h4">Oyun Sil</h4>
+							<p class="mb-30">Silmek istediğiniz oyunun bilgilerini giriniz.</p>
+						</div>
+					</div>
+
+					<form id="deleteGameForm">
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Oyun Kodu</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" name="gameCode" id="deleteGameCode" placeholder="KDS152" required>
+								<small class="form-text text-muted">Silmek istediğiniz oyunun benzersiz kodu</small>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Oyun Adı</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" name="gameName" id="deleteGameName" placeholder="Örnek Oyun Adı" required>
+								<small class="form-text text-muted">Silmek istediğiniz oyunun tam adı</small>
+							</div>
+						</div>
+
+						<!-- Oyun Bilgilerini Gösterme Alanı -->
+						<div id="gameInfoContainer" style="display:none;" class="mt-4 mb-4 p-3 border rounded">
+							<h5 class="text-blue">Silinecek Oyun Bilgileri</h5>
+							<div class="row">
+								<div class="col-md-6">
+									<p><strong>Oyun Kodu:</strong> <span id="displayGameCode"></span></p>
+									<p><strong>Oyun Adı:</strong> <span id="displayGameName"></span></p>
+									<p><strong>Fiyat:</strong> <span id="displayGamePrice"></span> ₺</p>
+								</div>
+								<div class="col-md-6">
+									<p><strong>Türler:</strong> <span id="displayGameGenres"></span></p>
+									<p><strong>Eklenme Tarihi:</strong> <span id="displayGameDate"></span></p>
+								</div>
+							</div>
+							<div class="mt-2">
+								<p><strong>Açıklama:</strong></p>
+								<p id="displayGameDescription" class="text-muted"></p>
+							</div>
+						</div>
+
+						<!-- Silme Butonu -->
+						<div class="form-group row">
+							<div class="col-sm-12 col-md-10 offset-md-2">
+								<button type="button" id="verifyGameBtn" class="btn btn-warning">
+									<i class="dw dw-check"></i> Oyun Bilgilerini Doğrula
+								</button>
+								<button type="submit" id="deleteGameBtn" class="btn btn-danger" style="display:none;">
+									<i class="dw dw-delete-3"></i> Oyunu Sil
+								</button>
+							</div>
+						</div>
+
+						<!-- Confirmation Modal (Bu kısmı HTML'in body kısmına ekleyin) -->
+						<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Silme İşlemini Onayla</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<p><strong><span id="gameToDeleteName"></span></strong> adlı oyunu silmek üzeresiniz. Bu işlem geri alınamaz!</p>
+										<p>Devam etmek istediğinize emin misiniz?</p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Hayır, Vazgeç</button>
+										<button type="button" id="confirmDeleteBtn" class="btn btn-danger">Evet, Sil</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Success Modal (Silme işlemi başarılı olduğunda gösterilecek) -->
+						<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header bg-success text-white">
+										<h5 class="modal-title">Başarılı</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<p><i class="icon-copy dw dw-checked"></i> <strong><span id="deletedGameName"></span></strong> adlı oyun başarıyla silinmiştir.</p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary" data-dismiss="modal">Tamam</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
-			
-			
-			
+
 			<div class="footer-wrap pd-20 mb-20 card-box">
 				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
 			</div>
 		</div>
 	</div>
+
 	<!-- js -->
 	<script src="~/PersonelSayfasi/vendors/scripts/core.js"></script>
 	<script src="~/PersonelSayfasi/vendors/scripts/script.min.js"></script>
 	<script src="~/PersonelSayfasi/vendors/scripts/process.js"></script>
 	<script src="~/PersonelSayfasi/vendors/scripts/layout-settings.js"></script>
-	<script src="~/PersonelSayfasi/src/plugins/apexcharts/apexcharts.min.js"></script>
-	<script src="~/PersonelSayfasi/src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="~/PersonelSayfasi/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-	<script src="~/PersonelSayfasi/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-	<script src="~/PersonelSayfasi/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-	<script src="~/PersonelSayfasi/vendors/scripts/dashboard.js"></script>
+	<script src="~/PersonelSayfasi/vendors/scripts/DeleteGame.js"></script>
 </body>
 </html>
