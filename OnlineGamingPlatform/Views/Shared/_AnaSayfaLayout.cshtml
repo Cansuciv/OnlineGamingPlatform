@@ -1,0 +1,912 @@
+﻿@{
+    string libertyart = "@libertyart"; // Örnek bir değer
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Liberty NFT Marketplace - HTML CSS Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/AnaSayfa/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/templatemo-liberty-market.css">
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/owl.css">
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/animate.css">
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/like-dislike-favorite.css">
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/favorite-button.css">
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/star-rating.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,400&subset=latin,cyrillic">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> *@
+    <!--
+
+    TemplateMo 577 Liberty Market
+
+    https://templatemo.com/tm-577-liberty-market
+
+    -->
+</head>
+
+<body>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/Sayfa/MainPage" class="logo">
+                            <img src="~/AnaSayfa/assets/images/logo.png" alt="">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="/Sayfa/MainPage" class="active">Home</a></li>
+                            <li><a href="/Sayfa/Games">Oyunlar</a></li>
+                            <li><a href="/Sayfa/Favorites">Favoriler</a></li>
+                            <li><a href="/Sayfa/Likes">Beğenilenler</a></li>
+                            <li><a href="/Sayfa/Purchases">Satın Alınanlar</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="header-text">
+                        <h2>Fortnite</h2>
+                        <p>Liberty NFT Market is a really cool and professional design for your NFT websites. This HTML CSS template is based on Bootstrap v5 and it is designed for NFT related web portals. Liberty can be freely downloaded from TemplateMo's free css templates.</p>
+                        <h1>199,99 TL</h1>
+                        <div class="buttons">
+                            <div class="main-button">
+                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="owl-banner owl-carousel">
+                        <div class="item">
+                            <img src="~/AnaSayfa/assets/images/Oyunlar/league-of-legends-2.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="~/AnaSayfa/assets/images/Oyunlar/league-of-legends-3.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="~/AnaSayfa/assets/images/Oyunlar/league-of-legends-4.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+
+    <div class="categories-collections">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="collections">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-heading">
+                                    <div class="line-dec"></div>
+                                    <h2><em>Top 10</em></h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="owl-collection owl-carousel">
+                                    <div class="item" data-game-id="fortnite">
+                                        <div class="image-container">
+                                            <img src="~/AnaSayfa/assets/images/Oyunlar/fortnite.jpg" alt="">
+                                            <span class="top-badge">1</span>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>FORTNITE</h4>
+                                            <span class="collection">Fiyat:<br><strong>299.99 TL</strong></span>
+
+                                            <!-- Vote and Favorite Buttons Container -->
+                                            <!-- Interaction Buttons Container -->
+                                            <div class="interaction-buttons-container">
+                                                <!-- Vote Buttons -->
+                                                <div class="vote-buttons-container">
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn like-btn" data-vote-type="like">
+                                                            <i class="vote-icon fas fa-thumbs-up"></i>
+                                                        </div>
+                                                        <span class="vote-count like-count">0</span>
+                                                    </div>
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn dislike-btn" data-vote-type="dislike">
+                                                            <i class="vote-icon fas fa-thumbs-down"></i>
+                                                        </div>
+                                                        <span class="vote-count dislike-count">0</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Favorite Button -->
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" class="favorite-checkbox" />
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart"></i>
+                                                </label>
+                                            </div>
+
+                                            <!-- Rating Stars -->
+                                            <!-- Rating Stars -->
+                                            <div class="game-rating-container">
+                                                <div class="rating-reset-area"></div> <!-- Yeni eklenen sıfırlama alanı -->
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="fortnite-rate5" name="fortnite-rating" value="5">
+                                                    <label for="fortnite-rate5"></label>
+                                                    <input type="radio" id="fortnite-rate4" name="fortnite-rating" value="4">
+                                                    <label for="fortnite-rate4"></label>
+                                                    <input type="radio" id="fortnite-rate3" name="fortnite-rating" value="3">
+                                                    <label for="fortnite-rate3"></label>
+                                                    <input type="radio" id="fortnite-rate2" name="fortnite-rating" value="2">
+                                                    <label for="fortnite-rate2"></label>
+                                                    <input type="radio" id="fortnite-rate1" name="fortnite-rating" value="1">
+                                                    <label for="fortnite-rate1"></label>
+                                                    <!-- Gizli sıfırlama butonu -->
+                                                    <input type="radio" id="fortnite-rate0" name="fortnite-rating" value="0" class="rating-clear">
+                                                </fieldset>
+                                                <div class="rating-value">0</div>
+                                            </div>
+
+                                            <div class="main-button">
+                                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item" data-game-id="valorant">
+                                        <div class="image-container">
+                                            <img src="~/AnaSayfa/assets/images/Oyunlar/valorant.jpg" alt="">
+                                            <span class="top-badge">2</span>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>Valorant</h4>
+                                            <span class="collection">Fiyat:<br><strong>299.99 TL</strong></span>
+                                            <!-- Vote and Favorite Buttons Container -->
+                                            <!-- Interaction Buttons Container -->
+                                            <div class="interaction-buttons-container">
+                                                <!-- Vote Buttons -->
+                                                <div class="vote-buttons-container">
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn like-btn" data-vote-type="like">
+                                                            <i class="vote-icon fas fa-thumbs-up"></i>
+                                                        </div>
+                                                        <span class="vote-count like-count">0</span>
+                                                    </div>
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn dislike-btn" data-vote-type="dislike">
+                                                            <i class="vote-icon fas fa-thumbs-down"></i>
+                                                        </div>
+                                                        <span class="vote-count dislike-count">0</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Favorite Button -->
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" class="favorite-checkbox" />
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart"></i>
+                                                </label>
+                                            </div>
+                                            <!-- Rating Stars -->
+                                            <!-- Rating Stars -->
+                                            <div class="game-rating-container">
+                                                <div class="rating-reset-area"></div> <!-- Yeni eklenen sıfırlama alanı -->
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="valorant-rate5" name="valorant-rating" value="5">
+                                                    <label for="valorant-rate5"></label>
+                                                    <input type="radio" id="valorant-rate4" name="valorant-rating" value="4">
+                                                    <label for="valorant-rate4"></label>
+                                                    <input type="radio" id="valorant-rate3" name="valorant-rating" value="3">
+                                                    <label for="valorant-rate3"></label>
+                                                    <input type="radio" id="valorant-rate2" name="valorant-rating" value="2">
+                                                    <label for="valorant-rate2"></label>
+                                                    <input type="radio" id="valorant-rate1" name="valorant-rating" value="1">
+                                                    <label for="valorant-rate1"></label>
+                                                    <!-- Gizli sıfırlama butonu -->
+                                                    <input type="radio" id="valorant-rate0" name="valorant-rating" value="0" class="rating-clear">
+                                                </fieldset>
+                                                <div class="rating-value">0</div>
+                                            </div>
+                                            
+                                            <div class="main-button">
+                                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item" data-game-id="marvel-rivals">
+                                        <div class="image-container">
+                                            <img src="~/AnaSayfa/assets/images/Oyunlar/marvel-rivals.png" alt="">
+                                            <span class="top-badge">3</span>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>Marvel</h4>
+                                            <span class="collection">Fiyat:<br><strong>299.99 TL</strong></span>
+                                            <!-- Vote and Favorite Buttons Container -->
+                                            <!-- Interaction Buttons Container -->
+                                            <div class="interaction-buttons-container">
+                                                <!-- Vote Buttons -->
+                                                <div class="vote-buttons-container">
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn like-btn" data-vote-type="like">
+                                                            <i class="vote-icon fas fa-thumbs-up"></i>
+                                                        </div>
+                                                        <span class="vote-count like-count">0</span>
+                                                    </div>
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn dislike-btn" data-vote-type="dislike">
+                                                            <i class="vote-icon fas fa-thumbs-down"></i>
+                                                        </div>
+                                                        <span class="vote-count dislike-count">0</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Favorite Button -->
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" class="favorite-checkbox" />
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart"></i>
+                                                </label>
+                                            </div>
+
+                                            <!-- Rating Stars -->
+                                            <!-- Rating Stars -->
+                                            <div class="game-rating-container">
+                                                <div class="rating-reset-area"></div> <!-- Yeni eklenen sıfırlama alanı -->
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="marvel-rivals-rate5" name="marvel-rivals-rating" value="5">
+                                                    <label for="marvel-rivals-rate5"></label>
+                                                    <input type="radio" id="marvel-rivals-rate4" name="marvel-rivals-rating" value="4">
+                                                    <label for="marvel-rivals-rate4"></label>
+                                                    <input type="radio" id="marvel-rivals-rate3" name="marvel-rivals-rating" value="3">
+                                                    <label for="marvel-rivals-rate3"></label>
+                                                    <input type="radio" id="marvel-rivals-rate2" name="marvel-rivals-rating" value="2">
+                                                    <label for="marvel-rivals-rate2"></label>
+                                                    <input type="radio" id="marvel-rivals-rate1" name="marvel-rivals-rating" value="1">
+                                                    <label for="marvel-rivals-rate1"></label>
+                                                    <!-- Gizli sıfırlama butonu -->
+                                                    <input type="radio" id="marvel-rivals-rate0" name="marvel-rivals-rating" value="0" class="rating-clear">
+                                                </fieldset>
+                                                <div class="rating-value">0</div>
+                                            </div>
+                                            <div class="main-button">
+                                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item" data-game-id="akolyta">
+                                        <div class="image-container">
+                                            <img src="~/AnaSayfa/assets/images/Oyunlar/akolyta.jpg" alt="">
+                                            <span class="top-badge">4</span>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>Akolyta</h4>
+                                            <span class="collection">Fiyat:<br><strong>299.99 TL</strong></span>
+
+                                            <!-- Vote and Favorite Buttons Container -->
+                                            <!-- Interaction Buttons Container -->
+                                            <div class="interaction-buttons-container">
+                                                <!-- Vote Buttons -->
+                                                <div class="vote-buttons-container">
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn like-btn" data-vote-type="like">
+                                                            <i class="vote-icon fas fa-thumbs-up"></i>
+                                                        </div>
+                                                        <span class="vote-count like-count">0</span>
+                                                    </div>
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn dislike-btn" data-vote-type="dislike">
+                                                            <i class="vote-icon fas fa-thumbs-down"></i>
+                                                        </div>
+                                                        <span class="vote-count dislike-count">0</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Favorite Button -->
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" class="favorite-checkbox" />
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart"></i>
+                                                </label>
+                                            </div>
+
+                                            <!-- Rating Stars -->
+                                            <!-- Rating Stars -->
+                                            <div class="game-rating-container">
+                                                <div class="rating-reset-area"></div> <!-- Yeni eklenen sıfırlama alanı -->
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="akolyta-rate5" name="akolyta-rating" value="5">
+                                                    <label for="akolyta-rate5"></label>
+                                                    <input type="radio" id="akolyta-rate4" name="akolyta-rating" value="4">
+                                                    <label for="akolyta-rate4"></label>
+                                                    <input type="radio" id="akolyta-rate3" name="akolyta-rating" value="3">
+                                                    <label for="akolyta-rate3"></label>
+                                                    <input type="radio" id="akolyta-rate2" name="akolyta-rating" value="2">
+                                                    <label for="akolyta-rate2"></label>
+                                                    <input type="radio" id="akolyta-rate1" name="akolyta-rating" value="1">
+                                                    <label for="akolyta-rate1"></label>
+                                                    <!-- Gizli sıfırlama butonu -->
+                                                    <input type="radio" id="akolyta-rate0" name="akolyta-rating" value="0" class="rating-clear">
+                                                </fieldset>
+                                                <div class="rating-value">0</div>
+                                            </div>
+                                            <div class="main-button">
+                                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item" data-game-id="asurajang">
+                                        <div class="image-container">
+                                            <img src="~/AnaSayfa/assets/images/Oyunlar/asurajang.png" alt="">
+                                            <span class="top-badge">5</span>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>Asurajang</h4>
+                                            <span class="collection">Fiyat:<br><strong>299.99 TL</strong></span>
+
+                                            <!-- Vote and Favorite Buttons Container -->
+                                            <!-- Interaction Buttons Container -->
+                                            <div class="interaction-buttons-container">
+                                                <!-- Vote Buttons -->
+                                                <div class="vote-buttons-container">
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn like-btn" data-vote-type="like">
+                                                            <i class="vote-icon fas fa-thumbs-up"></i>
+                                                        </div>
+                                                        <span class="vote-count like-count">0</span>
+                                                    </div>
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn dislike-btn" data-vote-type="dislike">
+                                                            <i class="vote-icon fas fa-thumbs-down"></i>
+                                                        </div>
+                                                        <span class="vote-count dislike-count">0</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Favorite Button -->
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" class="favorite-checkbox" />
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart"></i>
+                                                </label>
+                                            </div>
+
+                                            <!-- Rating Stars -->
+                                            <!-- Rating Stars -->
+                                            <div class="game-rating-container">
+                                                <div class="rating-reset-area"></div> <!-- Yeni eklenen sıfırlama alanı -->
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="asurajang-rate5" name="asurajang-rating" value="5">
+                                                    <label for="asurajang-rate5"></label>
+                                                    <input type="radio" id="asurajang-rate4" name="asurajang-rating" value="4">
+                                                    <label for="asurajang-rate4"></label>
+                                                    <input type="radio" id="asurajang-rate3" name="asurajang-rating" value="3">
+                                                    <label for="asurajang-rate3"></label>
+                                                    <input type="radio" id="asurajang-rate2" name="asurajang-rating" value="2">
+                                                    <label for="asurajang-rate2"></label>
+                                                    <input type="radio" id="asurajang-rate1" name="asurajang-rating" value="1">
+                                                    <label for="asurajang-rate1"></label>
+                                                    <!-- Gizli sıfırlama butonu -->
+                                                    <input type="radio" id="asurajang-rate0" name="asurajang-rating" value="0" class="rating-clear">
+                                                </fieldset>
+                                                <div class="rating-value">0</div>
+                                            </div>
+
+                                            <div class="main-button">
+                                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item" data-game-id="zenless-zone-zero">
+                                        <div class="image-container">
+                                            <img src="~/AnaSayfa/assets/images/Oyunlar/zenless-zone-zero.jpg" alt="">
+                                            <span class="top-badge">6</span>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>Zenless Zone Zero</h4>
+                                            <span class="collection">Fiyat:<br><strong>299.99 TL</strong></span>
+
+                                            <!-- Vote and Favorite Buttons Container -->
+                                            <!-- Interaction Buttons Container -->
+                                            <div class="interaction-buttons-container">
+                                                <!-- Vote Buttons -->
+                                                <div class="vote-buttons-container">
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn like-btn" data-vote-type="like">
+                                                            <i class="vote-icon fas fa-thumbs-up"></i>
+                                                        </div>
+                                                        <span class="vote-count like-count">0</span>
+                                                    </div>
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn dislike-btn" data-vote-type="dislike">
+                                                            <i class="vote-icon fas fa-thumbs-down"></i>
+                                                        </div>
+                                                        <span class="vote-count dislike-count">0</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Favorite Button -->
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" class="favorite-checkbox" />
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart"></i>
+                                                </label>
+                                            </div>
+
+                                            <!-- Rating Stars -->
+                                            <!-- Rating Stars -->
+                                            <div class="game-rating-container">
+                                                <div class="rating-reset-area"></div> <!-- Yeni eklenen sıfırlama alanı -->
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="zenless-zone-zero-rate5" name="zenless-zone-zero-rating" value="5">
+                                                    <label for="zenless-zone-zero-rate5"></label>
+                                                    <input type="radio" id="zenless-zone-zero-rate4" name="zenless-zone-zero-rating" value="4">
+                                                    <label for="zenless-zone-zero-rate4"></label>
+                                                    <input type="radio" id="zenless-zone-zero-rate3" name="zenless-zone-zero-rating" value="3">
+                                                    <label for="zenless-zone-zero-rate3"></label>
+                                                    <input type="radio" id="zenless-zone-zero-rate2" name="zenless-zone-zero-rating" value="2">
+                                                    <label for="zenless-zone-zero-rate2"></label>
+                                                    <input type="radio" id="zenless-zone-zero-rate1" name="zenless-zone-zero-rating" value="1">
+                                                    <label for="zenless-zone-zero-rate1"></label>
+                                                    <!-- Gizli sıfırlama butonu -->
+                                                    <input type="radio" id="zenless-zone-zero-rate0" name="zenless-zone-zero-rating" value="0" class="rating-clear">
+                                                </fieldset>
+                                                <div class="rating-value">0</div>
+                                            </div>
+
+                                            <div class="main-button">
+                                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item" data-game-id="cataclismo">
+                                        <div class="image-container">
+                                            <img src="~/AnaSayfa/assets/images/Oyunlar/cataclismo.jpg" alt="">
+                                            <span class="top-badge">7</span>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>Cataclismo</h4>
+                                            <span class="collection">Fiyat:<br><strong>299.99 TL</strong></span>
+
+                                            <!-- Vote and Favorite Buttons Container -->
+                                            <!-- Interaction Buttons Container -->
+                                            <div class="interaction-buttons-container">
+                                                <!-- Vote Buttons -->
+                                                <div class="vote-buttons-container">
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn like-btn" data-vote-type="like">
+                                                            <i class="vote-icon fas fa-thumbs-up"></i>
+                                                        </div>
+                                                        <span class="vote-count like-count">0</span>
+                                                    </div>
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn dislike-btn" data-vote-type="dislike">
+                                                            <i class="vote-icon fas fa-thumbs-down"></i>
+                                                        </div>
+                                                        <span class="vote-count dislike-count">0</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Favorite Button -->
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" class="favorite-checkbox" />
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart"></i>
+                                                </label>
+                                            </div>
+
+                                            <!-- Rating Stars -->
+                                            <!-- Rating Stars -->
+                                            <div class="game-rating-container">
+                                                <div class="rating-reset-area"></div> <!-- Yeni eklenen sıfırlama alanı -->
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="cataclismo-rate5" name="cataclismo-rating" value="5">
+                                                    <label for="cataclismo-rate5"></label>
+                                                    <input type="radio" id="cataclismo-rate4" name="cataclismo-rating" value="4">
+                                                    <label for="cataclismo-rate4"></label>
+                                                    <input type="radio" id="cataclismo-rate3" name="cataclismo-rating" value="3">
+                                                    <label for="cataclismo-rate3"></label>
+                                                    <input type="radio" id="cataclismo-rate2" name="cataclismo-rating" value="2">
+                                                    <label for="cataclismo-rate2"></label>
+                                                    <input type="radio" id="cataclismo-rate1" name="cataclismo-rating" value="1">
+                                                    <label for="cataclismo-rate1"></label>
+                                                    <!-- Gizli sıfırlama butonu -->
+                                                    <input type="radio" id="cataclismo-rate0" name="cataclismo-rating" value="0" class="rating-clear">
+                                                </fieldset>
+                                                <div class="rating-value">0</div>
+                                            </div>
+
+                                            <div class="main-button">
+                                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item" data-game-id="genshin-impac">
+                                        <div class="image-container">
+                                            <img src="~/AnaSayfa/assets/images/Oyunlar/genshin-impact.jpg" alt="">
+                                            <span class="top-badge">8</span>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>Genshin Impact</h4>
+                                            <span class="collection">Fiyat:<br><strong>299.99 TL</strong></span>
+
+                                            <!-- Vote and Favorite Buttons Container -->
+                                            <!-- Interaction Buttons Container -->
+                                            <div class="interaction-buttons-container">
+                                                <!-- Vote Buttons -->
+                                                <div class="vote-buttons-container">
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn like-btn" data-vote-type="like">
+                                                            <i class="vote-icon fas fa-thumbs-up"></i>
+                                                        </div>
+                                                        <span class="vote-count like-count">0</span>
+                                                    </div>
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn dislike-btn" data-vote-type="dislike">
+                                                            <i class="vote-icon fas fa-thumbs-down"></i>
+                                                        </div>
+                                                        <span class="vote-count dislike-count">0</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Favorite Button -->
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" class="favorite-checkbox" />
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart"></i>
+                                                </label>
+                                            </div>
+
+                                            <!-- Rating Stars -->
+                                            <!-- Rating Stars -->
+                                            <div class="game-rating-container">
+                                                <div class="rating-reset-area"></div> <!-- Yeni eklenen sıfırlama alanı -->
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="genshin-impact-rate5" name="genshin-impact-rating" value="5">
+                                                    <label for="genshin-impact-rate5"></label>
+                                                    <input type="radio" id="genshin-impact-rate4" name="genshin-impact-rating" value="4">
+                                                    <label for="genshin-impact-rate4"></label>
+                                                    <input type="radio" id="genshin-impact-rate3" name="genshin-impact-rating" value="3">
+                                                    <label for="genshin-impact-rate3"></label>
+                                                    <input type="radio" id="genshin-impact-rate2" name="genshin-impact-rating" value="2">
+                                                    <label for="genshin-impact-rate2"></label>
+                                                    <input type="radio" id="genshin-impact-rate1" name="genshin-impact-rating" value="1">
+                                                    <label for="genshin-impact-rate1"></label>
+                                                    <!-- Gizli sıfırlama butonu -->
+                                                    <input type="radio" id="genshin-impact-rate0" name="genshin-impact-rating" value="0" class="rating-clear">
+                                                </fieldset>
+                                                <div class="rating-value">0</div>
+                                            </div>
+
+                                            <div class="main-button">
+                                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item" data-game-id="star-stuff">
+                                        <div class="image-container">
+                                            <img src="~/AnaSayfa/assets/images/Oyunlar/star-stuff.jpg" alt="">
+                                            <span class="top-badge">9</span>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>Star Stuff</h4>
+                                            <span class="collection">Fiyat:<br><strong>299.99 TL</strong></span>
+
+                                            <!-- Vote and Favorite Buttons Container -->
+                                            <!-- Interaction Buttons Container -->
+                                            <div class="interaction-buttons-container">
+                                                <!-- Vote Buttons -->
+                                                <div class="vote-buttons-container">
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn like-btn" data-vote-type="like">
+                                                            <i class="vote-icon fas fa-thumbs-up"></i>
+                                                        </div>
+                                                        <span class="vote-count like-count">0</span>
+                                                    </div>
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn dislike-btn" data-vote-type="dislike">
+                                                            <i class="vote-icon fas fa-thumbs-down"></i>
+                                                        </div>
+                                                        <span class="vote-count dislike-count">0</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Favorite Button -->
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" class="favorite-checkbox" />
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart"></i>
+                                                </label>
+                                            </div>
+
+                                            <!-- Rating Stars -->
+                                            <!-- Rating Stars -->
+                                            <div class="game-rating-container">
+                                                <div class="rating-reset-area"></div> <!-- Yeni eklenen sıfırlama alanı -->
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="star-stuff-rate5" name="star-stuff-rating" value="5">
+                                                    <label for="star-stuff-rate5"></label>
+                                                    <input type="radio" id="star-stuff-rate4" name="star-stuff-rating" value="4">
+                                                    <label for="star-stuff-rate4"></label>
+                                                    <input type="radio" id="star-stuff-rate3" name="star-stuff-rating" value="3">
+                                                    <label for="star-stuff-rate3"></label>
+                                                    <input type="radio" id="star-stuff-rate2" name="star-stuff-rating" value="2">
+                                                    <label for="star-stuff-rate2"></label>
+                                                    <input type="radio" id="star-stuff-rate1" name="star-stuff-rating" value="1">
+                                                    <label for="star-stuff-rate1"></label>
+                                                    <!-- Gizli sıfırlama butonu -->
+                                                    <input type="radio" id="star-stuff-rate0" name="star-stuff-rating" value="0" class="rating-clear">
+                                                </fieldset>
+                                                <div class="rating-value">0</div>
+                                            </div>
+
+                                            <div class="main-button">
+                                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item" data-game-id="beyond-the-ice-palace-2">
+                                        <div class="image-container">
+                                            <img src="~/AnaSayfa/assets/images/Oyunlar/beyond-the-ice-palace-2.jpg" alt="">
+                                            <span class="top-badge">10</span>
+                                        </div>
+                                        <div class="down-content">
+                                            <h4>Beyond the Ice Place 2</h4>
+                                            <span class="collection">Fiyat:<br><strong>299.99 TL</strong></span>
+
+                                            <!-- Vote and Favorite Buttons Container -->
+                                            <!-- Interaction Buttons Container -->
+                                            <div class="interaction-buttons-container">
+                                                <!-- Vote Buttons -->
+                                                <div class="vote-buttons-container">
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn like-btn" data-vote-type="like">
+                                                            <i class="vote-icon fas fa-thumbs-up"></i>
+                                                        </div>
+                                                        <span class="vote-count like-count">0</span>
+                                                    </div>
+                                                    <div class="vote-wrapper">
+                                                        <div class="vote-btn dislike-btn" data-vote-type="dislike">
+                                                            <i class="vote-icon fas fa-thumbs-down"></i>
+                                                        </div>
+                                                        <span class="vote-count dislike-count">0</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Favorite Button -->
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" class="favorite-checkbox" />
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                                    <i class="glyphicon glyphicon-heart"></i>
+                                                </label>
+                                            </div>
+
+                                            <!-- Rating Stars -->
+                                            <!-- Rating Stars -->
+                                            <div class="game-rating-container">
+                                                <div class="rating-reset-area"></div> <!-- Yeni eklenen sıfırlama alanı -->
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="beyond-the-ice-palace-2-rate5" name="beyond-the-ice-palace-2-rating" value="5">
+                                                    <label for="beyond-the-ice-palace-2-rate5"></label>
+                                                    <input type="radio" id="beyond-the-ice-palace-2-rate4" name="beyond-the-ice-palace-2-rating" value="4">
+                                                    <label for="beyond-the-ice-palace-2-rate4"></label>
+                                                    <input type="radio" id="beyond-the-ice-palace-2-rate3" name="beyond-the-ice-palace-2-rating" value="3">
+                                                    <label for="beyond-the-ice-palace-2-rate3"></label>
+                                                    <input type="radio" id="beyond-the-ice-palace-2-rate2" name="beyond-the-ice-palace-2-rating" value="2">
+                                                    <label for="beyond-the-ice-palace-2-rate2"></label>
+                                                    <input type="radio" id="beyond-the-ice-palace-2-rate1" name="beyond-the-ice-palace-2-rating" value="1">
+                                                    <label for="beyond-the-ice-palace-2-rate1"></label>
+                                                    <!-- Gizli sıfırlama butonu -->
+                                                    <input type="radio" id="beyond-the-ice-palace-2-rate0" name="beyond-the-ice-palace-2-rating" value="0" class="rating-clear">
+                                                </fieldset>
+                                                <div class="rating-value">0</div>
+                                            </div>
+
+                                            <div class="main-button">
+                                                <a asp-controller="Sayfa" asp-action="Buy">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="categories">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-heading">
+                                    <div class="line-dec"></div>
+                                    <h2><em>Categoriler</em></h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <div class="icon">
+                                        <img src="~/AnaSayfa/assets/images/Category-Icons/Action-games-icon.png" alt="">
+                                    </div>
+                                    <h4>Aksiyon</h4>
+                                    <div class="icon-button">
+                                        <a href="/Sayfa/Games"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <div class="icon">
+                                        <img src="~/AnaSayfa/assets/images/Category-Icons/Adventure-games-icon.png" alt="">
+                                    </div>
+                                    <h4>Macera</h4>
+                                    <div class="icon-button">
+                                        <a href="/Sayfa/Games"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <div class="icon">
+                                        <img src="~/AnaSayfa/assets/images/Category-Icons/RolePlaying-games-icon.png" alt="">
+                                    </div>
+                                    <h4>Rol Yapma</h4>
+                                    <div class="icon-button">
+                                        <a href="/Sayfa/Games"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <div class="icon">
+                                        <img src="~/AnaSayfa/assets/images/Category-Icons/Simulation-games-icon.png" alt="">
+                                    </div>
+                                    <h4>Simülasyon</h4>
+                                    <div class="icon-button">
+                                        <a href="/Sayfa/Games"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <div class="icon">
+                                        <img src="~/AnaSayfa/assets/images/Category-Icons/Strategy-games-icon.png" alt="">
+                                    </div>
+                                    <h4>Strateji</h4>
+                                    <div class="icon-button">
+                                        <a href="/Sayfa/Games"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <div class="icon">
+                                        <img src="~/AnaSayfa/assets/images/Category-Icons/Horror-games-icon.png" alt="">
+                                    </div>
+                                    <h4>Korku</h4>
+                                    <div class="icon-button">
+                                        <a href="/Sayfa/Games"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <div class="icon">
+                                        <img src="~/AnaSayfa/assets/images/Category-Icons/Racing-games-icon.png" alt="">
+                                    </div>
+                                    <h4>Yarış</h4>
+                                    <div class="icon-button">
+                                        <a href="/Sayfa/Games"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <div class="icon">
+                                        <img src="~/AnaSayfa/assets/images/Category-Icons/Sports-games-icon.png" alt="">
+                                    </div>
+                                    <h4>Spor</h4>
+                                    <div class="icon-button">
+                                        <a href="/Sayfa/Games"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <div class="icon">
+                                        <img src="~/AnaSayfa/assets/images/Category-Icons/Fighting-games-icon.png" alt="">
+                                    </div>
+                                    <h4>Dövüş</h4>
+                                    <div class="icon-button">
+                                        <a href="/Sayfa/Games"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <div class="icon">
+                                        <img src="~/AnaSayfa/assets/images/Category-Icons/Puzzle-games-icon.png" alt="">
+                                    </div>
+                                    <h4>Bulmaca</h4>
+                                    <div class="icon-button">
+                                        <a href="/Sayfa/Games"><i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                        &nbsp;&nbsp;
+                        Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/AnaSayfa/assets/js/like-dislike-favorite.js" defer></script>
+    <script src="~/AnaSayfa/assets/js/favorite-button.js" defer></script>
+    <script src="~/AnaSayfa/assets/js/star-rating.js" defer></script>
+
+
+    <script src="~/AnaSayfa/vendor/jquery/jquery.min.js"></script>
+    <script src="~/AnaSayfa/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="~/AnaSayfa/assets/js/isotope.min.js"></script>
+    <script src="~/AnaSayfa/assets/js/owl-carousel.js"></script>
+
+    <script src="~/AnaSayfa/assets/js/tabs.js"></script>
+    <script src="~/AnaSayfa/assets/js/popup.js"></script>
+    <script src="~/AnaSayfa/assets/js/custom.js"></script>
+    
+    
+
+
+</body>
+</html>

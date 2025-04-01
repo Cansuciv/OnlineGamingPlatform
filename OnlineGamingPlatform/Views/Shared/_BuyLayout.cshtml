@@ -1,0 +1,231 @@
+﻿@{
+    string libertyart = "@libertyart";
+    string davidwalker = "@davidwalker";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Liberty Template - NFT Item Detail Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/AnaSayfa/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/templatemo-liberty-market.css">
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/owl.css">
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/animate.css">
+    <link rel="stylesheet" href="~/AnaSayfa/assets/css/credit-card.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!--
+
+    TemplateMo 577 Liberty Market
+
+    https://templatemo.com/tm-577-liberty-market
+
+    -->
+</head>
+
+<body>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="~/AnaSayfa/index.html" class="logo">
+                            <img src="~/AnaSayfa/assets/images/logo.png" alt="">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="/Sayfa/MainPage" class="active">Home</a></li>
+                            <li><a href="/Sayfa/Games">Oyunlar</a></li>
+                            <li><a href="/Sayfa/Favorites">Favoriler</a></li>
+                            <li><a href="/Sayfa/Likes">Beğenilenler</a></li>
+                            <li><a href="/Sayfa/Purchases">Satın Alınanlar</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <div class="item-details-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <div class="line-dec"></div>
+                        <h2>Satın Al</h2>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="front">
+                        <div class="image">
+                            <img src="~/AnaSayfa/assets/images/Kredi Karti/chip.png" alt="">
+                            <img src="~/AnaSayfa/assets/images/Kredi Karti/visa.png" alt="">
+                        </div>
+                        <div class="card-number-box">#### #### #### ####</div>
+                        <div class="flexbox">
+                            <div class="box">
+                                <span>card holder</span>
+                                <div class="card-holder-name">full name</div>
+                            </div>
+                            <div class="box">
+                                <span>expires</span>
+                                <div class="expiration">
+                                    <span class="exp-month">mm / </span>
+                                    <span class="exp-year">yy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="back">
+                        <div class="stripe"></div>
+                        <div class="box">
+                            <span>cvv</span>
+                            <div class="cvv-box"></div>
+                            <img src="~/AnaSayfa/assets/images/Kredi Karti/visa.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <form action="">
+                    <div class="inputBox">
+                        <span>card number</span>
+                        <input type="text" id="creditCardInput"
+                               placeholder="0000 0000 0000 0000"
+                               maxlength="19">
+                    </div>
+                    <div class="inputBox">
+                        <span>card holder</span>
+                        <input type="text" class="card-holder-input">
+                    </div>
+                    <div class="flexbox">
+                        <div class="inputBox">
+                            <span>expiration mm</span>
+                            <select name="" id="" class="month-input">
+                                <option value="month" selected disabled>month</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="inputBox">
+                            <span>expiration yy</span>
+                            <select name="" id="" class="year-input">
+                                <option value="year" selected disabled>year</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                            </select>
+                        </div>
+                        <div class="inputBox">
+                            <span>cvv</span>
+                            <input type="text" maxlength="4" class="cvv-input">
+                        </div>
+                    </div>
+                    <input type="submit" value="Öde" class="submit-btn">
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+  
+
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                        &nbsp;&nbsp;
+                        Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/AnaSayfa/vendor/jquery/jquery.min.js"></script>
+    <script src="~/AnaSayfa/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="~/AnaSayfa/assets/js/isotope.min.js"></script>
+    <script src="~/AnaSayfa/assets/js/owl-carousel.js"></script>
+
+    <script src="~/AnaSayfa/assets/js/tabs.js"></script>
+    <script src="~/AnaSayfa/assets/js/popup.js"></script>
+    <script src="~/AnaSayfa/assets/js/custom.js"></script>
+    <script src="~/AnaSayfa/assets/js/credit-card.js"></script>
+
+</body>
+</html>

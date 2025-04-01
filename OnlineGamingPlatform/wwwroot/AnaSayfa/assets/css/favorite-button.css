@@ -1,0 +1,108 @@
+﻿label {
+    /* Presentation */
+    font-size: 40px
+}
+
+    /* Required Styling */
+
+    label input[type="checkbox"] {
+        display: none;
+    }
+
+.custom-checkbox {
+    display: flex;
+    margin-left: 250px;
+    bottom: 65px;
+    position: relative;
+    cursor: pointer;
+}
+
+    .custom-checkbox .glyphicon {
+        color: #7453fc;
+        position: absolute;
+        top: 0.4em;
+        left: -1.25em;
+        font-size: 0.75em;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .custom-checkbox .glyphicon-heart-empty {
+        opacity: 1;
+    }
+
+    .custom-checkbox .glyphicon-heart {
+        opacity: 0;
+        color: #7453fc;
+    }
+
+    .custom-checkbox:hover .glyphicon-heart-empty {
+        opacity: 0.7;
+    }
+
+    .custom-checkbox input[type="checkbox"]:checked ~ .glyphicon-heart-empty {
+        opacity: 0 !important;
+    }
+
+    .custom-checkbox input[type="checkbox"]:checked ~ .glyphicon-heart {
+        opacity: 1 !important;
+    }
+
+    .custom-checkbox input[type="checkbox"]:not(:checked) ~ .glyphicon-heart {
+        opacity: 0 !important;
+    }
+
+
+/* Favorite Button Styles */
+.title-with-favorite {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.favorite-checkbox-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+    .favorite-checkbox-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .favorite-checkbox-container .checkmark {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .favorite-checkbox-container .glyphicon {
+        font-size: 20px;
+        color: #7453fc;
+        transition: all 0.3s ease;
+    }
+
+    .favorite-checkbox-container .glyphicon-heart-empty {
+        display: inline-block;
+    }
+
+    .favorite-checkbox-container .glyphicon-heart {
+        display: none;
+    }
+
+    .favorite-checkbox-container input:checked ~ .checkmark .glyphicon-heart-empty {
+        display: none;
+    }
+
+    .favorite-checkbox-container input:checked ~ .checkmark .glyphicon-heart {
+        display: inline-block;
+    }
+
+    .favorite-checkbox-container:hover .glyphicon-heart-empty {
+        opacity: 0.7;
+    }

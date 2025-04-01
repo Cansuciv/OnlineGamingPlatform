@@ -1,0 +1,73 @@
+﻿/* Rating System Styles */
+.game-rating-container {
+    position: relative;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-reset-area {
+    width: 30px; /* Boş alan genişliği */
+    height: 25px; /* Yıldızlar ile aynı yükseklik */
+    cursor: pointer;
+    position: relative;
+    margin-right: -20px;
+}
+
+    .rating-reset-area::before {
+        content: "";
+        font-size: 20px;
+        color: #ccc;
+        position: absolute;
+        right: 5px;
+        transition: all 0.2s ease;
+    }
+
+    .rating-reset-area:hover::before {
+        color: #7453fc;
+        transform: scale(1.2);
+    }
+
+
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    position: relative;
+}
+
+    .rating > input {
+        display: none;
+    }
+
+    .rating > label {
+        width: 25px;
+        height: 25px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E");
+        background-size: cover;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+        .rating > label:hover,
+        .rating > label:hover ~ label,
+        .rating > input:checked ~ label {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237453fc'%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E");
+            transform: scale(1.1);
+        }
+
+.rating-value {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    min-width: 20px;
+    text-align: center;
+}
+
+
