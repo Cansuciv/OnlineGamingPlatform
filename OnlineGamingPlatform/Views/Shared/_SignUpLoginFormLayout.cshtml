@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <title>Sign up / Login Form</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="~/sign-up-login-form/src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form asp-controller="Sayfa" asp-action="MainPage" method="POST">
+                <label for="chk" aria-hidden="true">Üye Ol</label>
+                <input type="text" name="name" placeholder="Ad" required>
+                <input type="text" name="surname" placeholder="Soyad" required>
+                <input type="text" name="username" placeholder="Kullanıcı Adı" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" id="signup-password" name="password" placeholder="Şifre" required>
+                <i class="fa fa-eye" id="toggleSignupPassword"></i>
+                <div id="my-signin2"></div>
+                <button type="submit">Üye Ol</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form asp-controller="Sayfa" asp-action="MainPage" method="POST">
+                <label for="chk" aria-hidden="true">Giriş Yap</label>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" id="login-password" name="password" placeholder="Şifre" required>
+                <i class="fa fa-eye" id="toggleLoginPassword"></i>
+                <button type="submit">Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/sign-up-login-form/src/sign-up-login-form.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html>

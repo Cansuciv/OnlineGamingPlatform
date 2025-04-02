@@ -31,6 +31,11 @@ namespace OnlineGamingPlatform.Controllers
             return View();
         }
 
+        public IActionResult SignUpLoginForm()
+        {
+            return View();
+        }
+
         public IActionResult PersonelSayfasi()
         {
             return View();

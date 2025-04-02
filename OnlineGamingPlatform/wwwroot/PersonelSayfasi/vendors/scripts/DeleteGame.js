@@ -49,7 +49,7 @@
         $('#deletedGameName').text(gameName);
         $('#successModal').modal('show');
 
-        // Formu temizle
+        // Formu temizlex   
         setTimeout(function () {
             $('#deleteGameForm')[0].reset();
             $('#gameInfoContainer').hide();

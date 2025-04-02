@@ -28,6 +28,13 @@
     <link rel="stylesheet" href="~/AnaSayfa/assets/css/favorite-button.css">
     <link rel="stylesheet" href="~/AnaSayfa/assets/css/star-rating.css">
 
+    <link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/vendors/styles/core.css">
+    <link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/vendors/styles/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/src/plugins/datatables/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="~/PersonelSayfasi/vendors/styles/style.css">
+
+
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,400&subset=latin,cyrillic">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
@@ -66,6 +73,23 @@
                             <li><a href="/Sayfa/Likes">Beğenilenler</a></li>
                             <li><a href="/Sayfa/Purchases">Satın Alınanlar</a></li>
                         </ul>
+
+                        <!-- Kullanıcı Bilgileri Dropdown -->
+                        <div class="user-info-dropdown">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                    <span class="user-icon">
+                                        <img src="~/PersonelSayfasi/vendors/images/photo1.jpg" alt="">
+                                    </span>
+                                    <span class="user-name">Ross C. Lopez</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                    <a class="dropdown-item" href="~/PersonelSayfasi/profile.html"><i class="dw dw-user1"></i> Profile</a>
+                                    <a class="dropdown-item" href="~/Sayfa/SignUpLoginForm"><i class="dw dw-logout"></i> Log Out</a>
+                                </div>
+                            </div>
+                        </div>
+
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
@@ -905,7 +929,16 @@
     <script src="~/AnaSayfa/assets/js/popup.js"></script>
     <script src="~/AnaSayfa/assets/js/custom.js"></script>
     
-    
+    <script src="~/PersonelSayfasi/vendors/scripts/core.js"></script>
+    <script src="~/PersonelSayfasi/vendors/scripts/script.min.js"></script>
+    <script src="~/PersonelSayfasi/vendors/scripts/process.js"></script>
+    <script src="~/PersonelSayfasi/vendors/scripts/layout-settings.js"></script>
+    <script src="~/PersonelSayfasi/src/plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="~/PersonelSayfasi/src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/PersonelSayfasi/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/PersonelSayfasi/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="~/PersonelSayfasi/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/PersonelSayfasi/vendors/scripts/dashboard.js"></script>
 
 
 </body>
