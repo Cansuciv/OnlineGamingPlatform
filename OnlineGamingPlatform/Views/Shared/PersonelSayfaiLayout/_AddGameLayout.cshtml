@@ -41,20 +41,6 @@
 		@RenderBody() 
 	</div>
 
-
-	<div class="pre-loader">
-		<div class="pre-loader-box">
-			<div class="loader-logo"><img src="~/PersonelSayfasi/vendors/images/deskapp-logo.svg" alt=""></div>
-			<div class='loader-progress' id="progress_div">
-				<div class='bar' id='bar1'></div>
-			</div>
-			<div class='percent' id='percent1'>0%</div>
-			<div class="loading-text">
-				Loading...
-			</div>
-		</div>
-	</div>
-
 	<div class="header">
 
 		<div class="header-right">
@@ -132,8 +118,6 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="~/PersonelSayfasi/profile.html"><i class="dw dw-user1"></i> Profile</a>
-						<a class="dropdown-item" href="~/PersonelSayfasi/profile.html"><i class="dw dw-settings2"></i> Setting</a>
-						<a class="dropdown-item" href="~/PersonelSayfasi/faq.html"><i class="dw dw-help"></i> Help</a>
 						<a class="dropdown-item" href="~/PersonelSayfasi/login.html"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
 				</div>
@@ -194,21 +178,6 @@
 					</li>
 
 					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="~/PersonelSayfasi/form-basic.html">Form Basic</a></li>
-							<li><a href="~/PersonelSayfasi/advanced-components.html">Advanced Components</a></li>
-							<li><a href="~/PersonelSayfasi/form-wizard.html">Form Wizard</a></li>
-							<li><a href="~/PersonelSayfasi/html5-editor.html">HTML5 Editor</a></li>
-							<li><a href="~/PersonelSayfasi/form-pickers.html">Form Pickers</a></li>
-							<li><a href="~/PersonelSayfasi/image-cropper.html">Image Cropper</a></li>
-							<li><a href="~/PersonelSayfasi/image-dropzone.html">Image Dropzone</a></li>
-						</ul>
-					</li>
-
-					<li class="dropdown">
 						<a asp-controller="Sayfa" asp-action="AddGame" class="dropdown-toggle">
 							<img src="/PersonelSayfasi/src/images/oyun-ekle-duzenle-sil-icon/oyun-ekle.png"
 								 alt="Oyun Ekle"
@@ -234,20 +203,6 @@
 							<span class="mtext">Oyun Sil</span>
 						</a>
 					</li>
-
-
-
-					<li>
-						<a href="~/PersonelSayfasi/chat.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-chat3"></span><span class="mtext">Chat</span>
-						</a>
-					</li>
-					<li>
-						<a href="~/PersonelSayfasi/invoice.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">Invoice</span>
-						</a>
-					</li>
-
 
 				</ul>
 			</div>
@@ -283,21 +238,30 @@
 						</div>
 					</div>
 					<form>
-						<!-- Ana Resim Yükleme (Tek dosya) -->
+						<!-- Resim Yönetimi - Ana Resim -->
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Ana Resim</label>
 							<div class="col-sm-12 col-md-10">
-								<input type="file" class="form-control-file" id="mainImage" accept="image/*" required>
-								<small class="form-text text-muted">Oyunun ana resmini yükleyin (Sadece 1 resim)</small>
+								<div id="mainImageContainer" style="display:none; position: relative; margin-bottom: 15px;">
+									<img id="mainImagePreview" src="#" class="img-thumbnail"
+										 style="width: 300px; height: 400px; object-fit: cover;">
+									<span class="delete-image-btn" onclick="removeMainImage()"
+										  style="position: absolute; top: 5px; right: 630px; background: red; color: white; border-radius: 50%; width: 20px; height: 20px; text-align: center; line-height: 20px; cursor: pointer;">×</span>
+								</div>
+								<input type="file" class="form-control-file" id="mainImageUpload" accept="image/*">
+								<small class="form-text text-muted">Yeni ana resim seçin (1:1.85 oran önerilir)</small>
 							</div>
 						</div>
 
-						<!-- İçerik Resim Yükleme (Maksimum 4 dosya) -->
+						<!-- Resim Yönetimi - İçerik Resimleri -->
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">İçerik Resimleri</label>
 							<div class="col-sm-12 col-md-10">
-								<input type="file" class="form-control-file" id="contentImages" accept="image/*" multiple max="4">
-								<small class="form-text text-muted">Oyun içeriği için resim yükleyin (Maksimum 4 resim)</small>
+								<div id="contentImagesContainer" style="display:none; margin-bottom: 15px;">
+									<div id="contentImagesPreview" class="d-flex flex-wrap"></div>
+								</div>
+								<input type="file" class="form-control-file" id="contentImagesUpload" multiple accept="image/*">
+								<small class="form-text text-muted">Yeni içerik resimleri seçin (Maksimum 4 adet)</small>
 							</div>
 						</div>
 
@@ -436,5 +400,6 @@
 	<script src="~/PersonelSayfasi/vendors/scripts/process.js"></script>
 	<script src="~/PersonelSayfasi/vendors/scripts/layout-settings.js"></script>
 	<script src="~/PersonelSayfasi/vendors/scripts/AddGame.js"></script>
+	<script src="~/PersonelSayfasi/vendors/scripts/OrganizeGame.js"></script>
 </body>
 </html>

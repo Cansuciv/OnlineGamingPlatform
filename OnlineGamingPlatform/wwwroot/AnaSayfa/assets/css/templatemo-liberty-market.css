@@ -871,6 +871,7 @@ Categories & Collections Style
 .categories .item h4 {
   margin-top: 15px;
   font-size: 20px;
+  color: white;
 }
 
 .categories .item .icon-button a {
@@ -923,6 +924,7 @@ Categories & Collections Style
     .collections .item .down-content h4 {
         font-size: 20px;
         border-bottom: 1px solid rgba(255,255,255,0.2);
+        color: white;
     }
 
 .image-container {
