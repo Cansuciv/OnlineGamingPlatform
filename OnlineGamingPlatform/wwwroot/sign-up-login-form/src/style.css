@@ -127,10 +127,39 @@ button {
 	margin-top: -20px;
 }
 
-/* Google Sign-In Button Styling */
-#my-signin2 {
-	margin: 20px auto;
-	width: 240px;
-	display: flex;
-	justify-content: center;
+/* Google Sign-In Button Custom Styling */
+
+/* Sayfa ortalayýcý konteyner */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
+
+/* Google logosu yuvarlak butonu */
+.google-icon-btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.google-icon-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Google logosu (küçük boyut) */
+.google-icon-btn img {
+    width: 30px;
+    height: 30px;
+}
+

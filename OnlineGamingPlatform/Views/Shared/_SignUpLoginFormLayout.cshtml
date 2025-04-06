@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+    ViewData["Title"] = "Giriş / Üye Ol";
 }
 
 <!DOCTYPE html>
@@ -8,8 +8,6 @@
     <meta charset="UTF-8">
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <title>Sign up / Login Form</title>
-
-    <!-- Additional CSS Files -->
     <link rel="stylesheet" href="~/sign-up-login-form/src/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -30,7 +28,16 @@
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" id="signup-password" name="password" placeholder="Şifre" required>
                 <i class="fa fa-eye" id="toggleSignupPassword"></i>
-                <div id="my-signin2"></div>
+
+                <!-- Google Sign-In Logo Butonu -->
+                <div class="center-container">
+                    <div class="google-icon-btn" id="google-login-btn" onclick="googleLoginClick()">
+                        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Sign-In" />
+                    </div>
+                </div>
+
+
+
                 <button type="submit">Üye Ol</button>
             </form>
         </div>
@@ -46,9 +53,10 @@
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="~/sign-up-login-form/src/sign-up-login-form.js"></script>
+    <!-- Scriptler -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=initGoogleAuth" async defer></script>
+    <script src="~/sign-up-login-form/src/sign-up-login-form.js"></script>
 </body>
 </html>

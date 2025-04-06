@@ -1,20 +1,9 @@
-﻿// Signup password toggle
+﻿// Şifre Göster/Gizle
 const signupIcon = document.getElementById('toggleSignupPassword');
 const signupPassword = document.getElementById('signup-password');
-
-signupIcon.addEventListener('click', function () {
-    togglePassword(signupPassword, signupIcon);
-});
-
-// Login password toggle
 const loginIcon = document.getElementById('toggleLoginPassword');
 const loginPassword = document.getElementById('login-password');
 
-loginIcon.addEventListener('click', function () {
-    togglePassword(loginPassword, loginIcon);
-});
-
-// Ortak fonksiyon
 function togglePassword(passwordField, icon) {
     if (passwordField.type === "password") {
         passwordField.type = "text";
@@ -25,21 +14,21 @@ function togglePassword(passwordField, icon) {
     }
 }
 
-// Google Sign-In functions
+signupIcon.addEventListener('click', () => togglePassword(signupPassword, signupIcon));
+loginIcon.addEventListener('click', () => togglePassword(loginPassword, loginIcon));
+
+// Google Sign-In: Butonu render et
 function onSuccess(googleUser) {
-    console.log('Google girişi başarılı!');
+    const profile = googleUser.getBasicProfile();
+    const idToken = googleUser.getAuthResponse().id_token;
 
-    // Token'i al
-    var id_token = googleUser.getAuthResponse().id_token;
-
-    // Token'i backend'e gönder
+    // Backend'e gönder (Controller'da işlenecek)
     $.ajax({
         type: 'POST',
-        url: '/Sayfa/GoogleLogin', // Backend endpoint'i
-        data: { token: id_token },
-        success: function (response) {
-            // Başarılıysa MainPage'e yönlendir
-            window.location.href = 'https://localhost:7135/Sayfa/MainPage';
+        url: '/Sayfa/GoogleLogin',
+        data: { token: idToken },
+        success: function () {
+            window.location.href = '/Sayfa/MainPage';
         },
         error: function (xhr) {
             console.error('Hata:', xhr.responseText);
@@ -49,7 +38,7 @@ function onSuccess(googleUser) {
 }
 
 function onFailure(error) {
-    console.error('Google giriş hatası:', error);
+    console.log(error);
 }
 
 function renderButton() {
@@ -61,5 +50,16 @@ function renderButton() {
         'theme': 'dark',
         'onsuccess': onSuccess,
         'onfailure': onFailure
+    });
+}
+function googleLoginClick() {
+    // Google oturum açma işlemini tetikle
+    gapi.auth2.getAuthInstance().signIn().then(onSuccess, onFailure);
+}
+function initGoogleAuth() {
+    gapi.load('auth2', function () {
+        gapi.auth2.init({
+            client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com'
+        });
     });
 }
